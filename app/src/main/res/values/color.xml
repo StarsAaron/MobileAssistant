@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_while">#FAFAFA</color>
+    <color name="text_while">#FAFAFA</color>
+    <color name="title_bar_blue">#ff25b7ff</color>
+    <color name="text_gray">#ffbababa</color>
+</resources>

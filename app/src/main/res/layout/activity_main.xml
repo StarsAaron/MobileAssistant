@@ -10,7 +10,7 @@
         android:layout_height="48dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:background="#ff25b7ff"
+        android:background="@color/title_bar_blue"
         android:padding="5dp"
         android:id="@+id/rl_searchbar">
         <ImageView
@@ -25,43 +25,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="搜索"
+            android:text="@string/search"
             android:id="@+id/tv_searh"
             android:paddingLeft="10dp"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/img_search"/>
+            android:textColor="@color/text_while"
+            android:layout_toEndOf="@+id/img_search" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/et_enter_text"
             android:layout_toEndOf="@+id/img_search"
-            android:hint="    请输入内容或网址"
+            android:hint="@string/enter_text"
             android:visibility="gone"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:singleLine="true"
-            android:textColorHint="#ffbababa"
-            android:background="#ffffffff"
+            android:textColorHint="@color/text_gray"
+            android:background="@color/background_while"
             android:layout_marginRight="45dp"
             android:layout_marginLeft="5dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="取消"
+            android:text="@string/concel_enter"
             android:id="@+id/tv_concel"
             android:paddingRight="10dp"
             android:visibility="gone"
             android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/text_while" />
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:text="New Text"
         android:id="@+id/textView2" />
 
     <TextView

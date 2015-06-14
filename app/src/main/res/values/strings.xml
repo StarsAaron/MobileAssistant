@@ -1,6 +1,13 @@
 <resources>
-    <string name="app_name">MobileAssistant</string>
+    <string name="app_name">手机卫士</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <!--widget-->
+    <string name="mobile_safe">手机防盗</string>
+    <string name="mobile_call">通讯卫士</string>
+    <string name="mobile_liu">流量统计</string>
+    <string name="cache_clean">缓存清理</string>
+    <string name="advance_tools">高级工具</string>
+    <string name="title_activity_base">BaseActivity</string>
 </resources>

@@ -2,13 +2,126 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/ln">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="#ff25b7ff"
+        android:padding="5dp"
+        android:id="@+id/rl_searchbar">
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="50dp"
+            android:id="@+id/img_search"
+            android:background="@mipmap/dark_search_banner_left_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="搜索"
+            android:id="@+id/tv_searh"
+            android:paddingLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_search"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/et_enter_text"
+            android:layout_toEndOf="@+id/img_search"
+            android:hint="    请输入内容或网址"
+            android:visibility="gone"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:singleLine="true"
+            android:textColorHint="#ffbababa"
+            android:background="#ffffffff"
+            android:layout_marginRight="45dp"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:id="@+id/tv_concel"
+            android:paddingRight="10dp"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="New Text"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
         android:id="@+id/textView"
-        android:layout_gravity="center_horizontal" />
+        android:background="#ff8a00ff" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView4"
+        android:background="#fffff33a" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView5"
+        android:background="#ff1cfffb" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView6"
+        android:background="#ff1aff75" />
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gv_appwidget"
+        android:layout_gravity="center_horizontal"
+        android:numColumns="3"
+        android:paddingTop="10dp"/>
+<!--
+    <SlidingDrawer
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:content="@+id/content"
+        android:handle="@+id/handle"
+        android:id="@+id/slidingDrawer"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:id="@id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="我是上拉框"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@id/handle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Handle" />
+    </SlidingDrawer>
+    -->
 </LinearLayout>

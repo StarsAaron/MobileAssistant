@@ -1,38 +1,115 @@
 package com.rujian.mobileassistant;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.GridView;
+import android.widget.RelativeLayout;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
+    private GridView appWidget;
+    private static String[] widgetName ={"手机防盗","通讯卫士","流量统计","缓存清理","高级工具"
+            ,"高级工具","高级工具","高级工具","高级工具"};
+    private static int[] widgetIcons ={R.mipmap.widget_assistant_caipiao
+            ,R.mipmap.widget_assistant_caipu
+            ,R.mipmap.widget_assistant_chongzhi
+            ,R.mipmap.widget_assistant_huochepiao
+            ,R.mipmap.widget_assistant_jiakao
+            ,R.mipmap.widget_assistant_jiemeng
+            ,R.mipmap.widget_assistant_kuaidi
+            ,R.mipmap.widget_assistant_suanming
+            ,R.mipmap.widget_assistant_tianqi};
+    private static List<Map<String,Object>> appList;
+    private RelativeLayout searchBar;
+    private TextView concel,searchText;
+    private EditText enterText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //注册组件
+        regist();
+        //初始化组件
+        init();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    private void regist() {
+        appWidget = (GridView) findViewById(R.id.gv_appwidget);
+        searchBar = (RelativeLayout)findViewById(R.id.rl_searchbar);
+        concel = (TextView)findViewById(R.id.tv_concel);
+        searchText = (TextView)findViewById(R.id.tv_searh);
+        enterText = (EditText)findViewById(R.id.et_enter_text);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    private void init() {
+        if(appList == null) {
+            appList = new ArrayList<>();
+        }
+//        if (widgetName == null) {
+//            widgetName = getResources().getStringArray(R.array.widget_names);
+//        }
+//        if (widgetIcons == null) {
+//            widgetIcons = getResources().getIntArray(R.array.widget_icons);
+//        }
+        for(int i=0;i<widgetName.length;i++){
+            Map<String,Object> map = new HashMap<>();
+            map.put("icons",widgetIcons[i]);
+            map.put("names",widgetName[i]);
+            appList.add(map);
         }
 
-        return super.onOptionsItemSelected(item);
+        appWidget.setAdapter(new SimpleAdapter(this,appList,R.layout.applist_item
+                ,new String[]{"icons","names"},new int[]{R.id.iv_icons,R.id.tv_appname}));
+        appWidget.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        System.out.println("点击了手机防盗");
+                        break;
+                    case 1:
+                        System.out.println("点击了手机卫士");
+                        break;
+                    case 2:
+                        System.out.println("点击了流量统计");
+                        break;
+                    case 3:
+                        System.out.println("点击了缓存清理");
+                        break;
+                    case 4:
+                        System.out.println("点击了高级工具");
+                        break;
+                }
+            }
+        });
+
+        searchBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchText.setVisibility(View.GONE);
+                enterText.setVisibility(View.VISIBLE);
+                concel.setVisibility(View.VISIBLE);
+            }
+        });
+        concel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchText.setVisibility(View.VISIBLE);
+                enterText.setVisibility(View.GONE);
+                concel.setVisibility(View.GONE);
+            }
+        });
     }
+
 }

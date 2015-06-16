@@ -1,6 +1,7 @@
 package com.rujian.mobileassistant;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,10 +18,11 @@ import java.util.Map;
 
 
 public class MainActivity extends Activity {
-    private GridView appWidget;
-    private static String[] widgetName ={"手机防盗","通讯卫士","流量统计","缓存清理","高级工具"
-            ,"高级工具","高级工具","高级工具","高级工具"};
-    private static int[] widgetIcons ={R.mipmap.widget_assistant_caipiao
+
+    private static final String[] widgetName ={"软件管理","通讯卫士","程序锁","进程管理","缓存清理"
+            ,"XXXX","XXXX","XXXX","XXXX"};
+    private static final int[] widgetIcons ={
+            R.mipmap.widget_assistant_caipiao
             ,R.mipmap.widget_assistant_caipu
             ,R.mipmap.widget_assistant_chongzhi
             ,R.mipmap.widget_assistant_huochepiao
@@ -30,6 +32,7 @@ public class MainActivity extends Activity {
             ,R.mipmap.widget_assistant_suanming
             ,R.mipmap.widget_assistant_tianqi};
     private static List<Map<String,Object>> appList;
+    private GridView appWidget;
     private RelativeLayout searchBar;
     private TextView concel,searchText;
     private EditText enterText;
@@ -69,26 +72,36 @@ public class MainActivity extends Activity {
             appList.add(map);
         }
 
-        appWidget.setAdapter(new SimpleAdapter(this,appList,R.layout.applist_item
+        appWidget.setAdapter(new SimpleAdapter(this,appList,R.layout.list_function_item
                 ,new String[]{"icons","names"},new int[]{R.id.iv_icons,R.id.tv_appname}));
         appWidget.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        System.out.println("点击了手机防盗");
+                        Intent intent1 = new Intent(MainActivity.this,AppManagerActivity.class);
+                        startActivity(intent1);
+                        System.out.println("点击了软件管理");
                         break;
                     case 1:
+                        Intent intent2 = new Intent(MainActivity.this,AppManagerActivity.class);
+                        startActivity(intent2);
                         System.out.println("点击了手机卫士");
                         break;
                     case 2:
-                        System.out.println("点击了流量统计");
+                        Intent intent3 = new Intent(MainActivity.this,AppManagerActivity.class);
+                        startActivity(intent3);
+                        System.out.println("点击了程序锁");
                         break;
                     case 3:
-                        System.out.println("点击了缓存清理");
+                        Intent intent4 = new Intent(MainActivity.this,AppManagerActivity.class);
+                        startActivity(intent4);
+                        System.out.println("点击了进程管理");
                         break;
                     case 4:
-                        System.out.println("点击了高级工具");
+                        Intent intent5 = new Intent(MainActivity.this,AppManagerActivity.class);
+                        startActivity(intent5);
+                        System.out.println("点击了缓存清理");
                         break;
                 }
             }

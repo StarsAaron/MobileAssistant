@@ -24,6 +24,35 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="内存可用空间：100MB"
+            android:id="@+id/tv_memory_available_space"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="5dp"
+            android:singleLine="true"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="SD卡可用空间：100MB"
+            android:id="@+id/tv_SD_available_space"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="5dp"
+            android:singleLine="true"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -33,7 +62,13 @@
             android:layout_height="match_parent"
             android:id="@+id/lv_appman"
             android:visibility="visible" />
-
+        <!--
+                <ExpandableListView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lv_appman"
+                    android:layout_gravity="center" />
+        -->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -60,10 +95,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="用户软件(100)"
+            android:text="用户软件(0)"
             android:id="@+id/tv_appman_userbar"
             android:background="#ff717177"
             android:textColor="@color/text_while" />
+
     </FrameLayout>
 
 </LinearLayout>

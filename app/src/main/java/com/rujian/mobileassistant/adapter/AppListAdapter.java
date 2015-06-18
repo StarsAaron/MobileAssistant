@@ -1,14 +1,20 @@
 package com.rujian.mobileassistant.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.support.annotation.StyleableRes;
+import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rujian.mobileassistant.R;
 import com.rujian.mobileassistant.domain.AppInfo;
@@ -22,6 +28,7 @@ public class AppListAdapter extends BaseAdapter {
     private List<AppInfo> userAppInfos;
     private List<AppInfo> systemAppInfos;
     private Context context;
+    private int visiablePosition;
 
     public AppListAdapter(Context context,List<AppInfo> l1,List<AppInfo> l2) {
         this.context = context;
@@ -31,6 +38,7 @@ public class AppListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+        //+1因为多了TextView
         return userAppInfos.size() + 1 + systemAppInfos.size() + 1;
     }
 
@@ -54,12 +62,13 @@ public class AppListAdapter extends BaseAdapter {
     }
 
     @Override
-    public long getItemId(int position) {
+    public long getItemId(final int position) {
+        visiablePosition = position;
         return 0;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         AppInfo appInfo;
 
         if (position == 0) {// 显示一个textview告诉用户有多少个用户应用
@@ -91,16 +100,19 @@ public class AppListAdapter extends BaseAdapter {
             view = convertView;
             holder = (ViewHolder) view.getTag();
         } else {
-            view = View.inflate(context,
-                    R.layout.list_app_item, null);
+            view = View.inflate(context,R.layout.list_app_item, null);
             holder = new ViewHolder();
             holder.iv = (ImageView) view.findViewById(R.id.iv_icon);
             holder.tv_name = (TextView) view.findViewById(R.id.tv_name);
-            holder.tv_location = (TextView) view
-                    .findViewById(R.id.tv_location);
+            holder.tv_location = (TextView) view.findViewById(R.id.tv_location);
+
+            holder.tv_uninstall = (TextView) view.findViewById(R.id.tv_uninstall);
+            holder.tv_open = (TextView) view.findViewById(R.id.tv_open);
+            holder.tv_share = (TextView) view.findViewById(R.id.tv_share);
+
             view.setTag(holder);
         }
-
+        //赋值
         holder.iv.setImageDrawable(appInfo.getIcon());
         holder.tv_name.setText(appInfo.getName());
         if (appInfo.isInRom()) {
@@ -115,5 +127,9 @@ public class AppListAdapter extends BaseAdapter {
         ImageView iv;
         TextView tv_name;
         TextView tv_location;
+        //隐藏的Bar
+        TextView tv_uninstall;
+        TextView tv_open;
+        TextView tv_share;
     }
 }

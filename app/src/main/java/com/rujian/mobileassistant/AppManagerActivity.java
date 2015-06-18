@@ -118,7 +118,11 @@ public class AppManagerActivity extends Activity{
                     tv_open.setOnClickListener(new MyOnclickListener());
                     tv_share.setOnClickListener(new MyOnclickListener());
                     //显示隐藏的bar
-                    ll.setVisibility(View.VISIBLE);
+                    if(ll.getVisibility() ==View.GONE){
+                        ll.setVisibility(View.VISIBLE);
+                    }else {
+                        ll.setVisibility(View.GONE);
+                    }
 
                     if (position < (userAppListInfo.size() + 1)) {
                         appInfo = userAppListInfo.get(position - 1);

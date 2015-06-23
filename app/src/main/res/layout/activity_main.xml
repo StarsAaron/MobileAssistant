@@ -7,11 +7,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="@dimen/dimen_title_bar_height"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:background="@color/title_bar_blue"
-        android:padding="5dp"
+        android:background="@color/color_title_bar_blue"
+        android:padding="@dimen/dimen_layout_margin_little"
         android:id="@+id/rl_searchbar">
         <ImageView
             android:layout_width="35dp"
@@ -29,7 +29,7 @@
             android:id="@+id/tv_searh"
             android:paddingLeft="10dp"
             android:layout_centerVertical="true"
-            android:textColor="@color/text_while"
+            android:textColor="@color/color_text_while"
             android:layout_toEndOf="@+id/img_search" />
 
         <EditText
@@ -42,8 +42,8 @@
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:singleLine="true"
-            android:textColorHint="@color/text_gray"
-            android:background="@color/background_while"
+            android:textColorHint="@color/color_text_gray"
+            android:background="@color/color_background_while"
             android:layout_marginRight="45dp"
             android:layout_marginLeft="5dp" />
 
@@ -56,7 +56,7 @@
             android:visibility="gone"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:textColor="@color/text_while" />
+            android:textColor="@color/color_text_while" />
 
     </RelativeLayout>
 

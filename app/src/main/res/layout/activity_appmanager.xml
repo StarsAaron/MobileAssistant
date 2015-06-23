@@ -2,31 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:background="@color/title_bar_blue"
-        android:padding="5dp"
-        android:id="@+id/rl_appmanager_bar">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="软件管理"
-            android:id="@+id/tv_appmanager_title"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/text_while"
-            android:textSize="24dp" />
-
-    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="@dimen/dimen_second_title_bar_height">
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,9 +15,9 @@
             android:id="@+id/tv_memory_available_space"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="@dimen/dimen_layout_margin_little"
             android:singleLine="true"
-            android:textSize="16dp" />
+            android:textSize="@dimen/dimen_level2_text_size" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -48,9 +27,9 @@
             android:id="@+id/tv_SD_available_space"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="@dimen/dimen_layout_margin_little"
             android:singleLine="true"
-            android:textSize="16dp" />
+            android:textSize="@dimen/dimen_level2_text_size" />
     </RelativeLayout>
 
     <FrameLayout
@@ -87,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="正在加载中。。。"
+                android:text="@string/app_manager_loading"
                 android:id="@+id/tv_loading" />
         </LinearLayout>
 
@@ -95,10 +74,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="用户软件(0)"
+            android:text="@string/app_manager_userapp_amount"
             android:id="@+id/tv_appman_userbar"
-            android:background="#ff717177"
-            android:textColor="@color/text_while" />
+            android:background="@color/color_title_bar_gray"
+            android:textColor="@color/color_text_while" />
 
     </FrameLayout>
 

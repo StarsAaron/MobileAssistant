@@ -1,7 +1,5 @@
 package com.rujian.mobileassistant;
 
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
@@ -18,12 +16,11 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rujian.mobileassistant.adapter.AppListAdapter;
-import com.rujian.mobileassistant.domain.AppInfo;
+import com.rujian.mobileassistant.bean.AppInfo;
 import com.rujian.mobileassistant.engine.AppInfoProvider;
 
 import java.util.ArrayList;
@@ -32,7 +29,7 @@ import java.util.List;
 /**
  * Created by stars on 2015/6/14.
  */
-public class AppManagerActivity extends Activity{
+public class AppManagerActivity extends BaseHeadActivity{
     private ListView appList;
 //    private ExpandableListView appList;
     private TextView userBar;//灰色用户程序数量Bar
@@ -60,16 +57,16 @@ public class AppManagerActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appmanager);
         //注册组件
-        regist();
+        assignView();
         //初始化组件
-        init();
+        initView();
     }
 
     /**
      * @regis
      * @descript
      */
-    private void regist() {
+    private void assignView() {
         appList = (ListView)findViewById(R.id.lv_appman);
         userBar = (TextView)findViewById(R.id.tv_appman_userbar);
         loading = (LinearLayout)findViewById(R.id.ll_loading);
@@ -81,7 +78,14 @@ public class AppManagerActivity extends Activity{
      * @init
      * @descript
      */
-    private void init() {
+    private void initView() {
+        setTitle(getResources().getString(R.string.app_manager));
+        setBackButtonOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         //显示存储空间大小
         showAvailableSpace();
         //获取手机应用的信息，并保存在List

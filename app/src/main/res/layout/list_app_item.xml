@@ -28,7 +28,7 @@
         android:layout_alignTop="@+id/iv_icon"
         android:layout_toEndOf="@+id/iv_icon"
         android:textSize="20dp"
-        android:textColor="@color/text_black"
+        android:textColor="@color/color_text_black"
         android:singleLine="true" />
 
     <TextView

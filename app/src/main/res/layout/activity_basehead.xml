@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_title_bar_height"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/color_title_bar_blue"
+        android:padding="@dimen/dimen_layout_margin_little"
+        android:id="@+id/rl_title_bar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/clean_cache_tv_bar_title"
+            android:id="@+id/tv_title"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/color_text_while"
+            android:textSize="@dimen/dimen_level1_text_size" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/img_button"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:background="@mipmap/arrow_back"
+            android:layout_marginLeft="@dimen/dimen_layout_margin_little" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/rl_container"></RelativeLayout>
+</LinearLayout>

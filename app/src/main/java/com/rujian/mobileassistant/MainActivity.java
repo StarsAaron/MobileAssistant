@@ -99,7 +99,7 @@ public class MainActivity extends Activity {
                         System.out.println("点击了进程管理");
                         break;
                     case 4:
-                        Intent intent5 = new Intent(MainActivity.this,AppManagerActivity.class);
+                        Intent intent5 = new Intent(MainActivity.this,CleanCacheActivity.class);
                         startActivity(intent5);
                         System.out.println("点击了缓存清理");
                         break;

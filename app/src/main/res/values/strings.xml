@@ -9,8 +9,17 @@
     <string name="mobile_liu">流量统计</string>
     <string name="cache_clean">缓存清理</string>
     <string name="advance_tools">高级工具</string>
-
+    <!--首页 -->
     <string name="enter_text">    请输入内容或网址</string>
     <string name="concel_enter">取消</string>
     <string name="search">搜索</string>
+    <!--清理缓存-->
+    <string name="clean_cache_tv_bar_title">缓存清理</string>
+    <string name="clean_cache_tv_scanning">现在扫描：</string>
+    <string name="clean_cache_tv_totalcache">总缓存大小：</string>
+    <string name="clean_cache_btn_cleanallcache">全部清理</string>
+    <!--清理缓存-->
+    <string name="app_manager">软件管理</string>
+    <string name="app_manager_loading">正在加载中...</string>
+    <string name="app_manager_userapp_amount">用户软件(0)</string>
 </resources>

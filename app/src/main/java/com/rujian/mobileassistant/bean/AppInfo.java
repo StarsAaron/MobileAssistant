@@ -1,4 +1,4 @@
-package com.rujian.mobileassistant.domain;
+package com.rujian.mobileassistant.bean;
 
 import android.graphics.drawable.Drawable;
 

@@ -1,23 +1,16 @@
 package com.rujian.mobileassistant.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rujian.mobileassistant.R;
-import com.rujian.mobileassistant.domain.AppInfo;
+import com.rujian.mobileassistant.bean.AppInfo;
 
 import java.util.List;
 

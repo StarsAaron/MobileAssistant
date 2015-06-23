@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background_while">#FAFAFA</color>
-    <color name="text_while">#FAFAFA</color>
-    <color name="title_bar_blue">#ff25b7ff</color>
-    <color name="text_gray">#ffbababa</color>
-    <color name="text_black">#000000</color>
+    <color name="color_background_while">#FAFAFA</color>
+    <color name="color_text_while">#FAFAFA</color>
+    <color name="color_title_bar_blue">#ff25b7ff</color>
+    <color name="color_text_gray">#ffbababa</color>
+    <color name="color_text_black">#000000</color>
+    <color name="color_line">#ffc6c6c6</color>
+    <color name="color_bottom_bar">#ff525252</color>
+    <color name="color_title_bar_gray">#ff717177</color>
 </resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_second_title_bar_height">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/clean_cache_tv_scanning"
+            android:id="@+id/tv_checkingapp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/dimen_layout_margin_little"
+            android:singleLine="true"
+            android:textSize="@dimen/dimen_level2_text_size"
+            android:layout_marginRight="@dimen/dimen_layout_margin_large" />
+
+        <ProgressBar
+            android:layout_width="@dimen/dimen_second_title_bar_height"
+            android:layout_height="@dimen/dimen_second_title_bar_height"
+            android:id="@+id/pr_appcachebar"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/dimen_layout_margin_little"
+            android:indeterminate="false"
+            android:focusableInTouchMode="false" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_line_height"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:background="@color/color_line" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dimen_layout_margin_large"
+            android:fillViewport="false">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ll_container"></LinearLayout>
+        </ScrollView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_bottom_bar_height"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/color_bottom_bar">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/clean_cache_tv_totalcache"
+                android:id="@+id/tv_allcache_size"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/dimen_layout_margin_mediu"
+                android:textColor="@color/color_text_while" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_button_height"
+                android:text="@string/clean_cache_btn_cleanallcache"
+                android:id="@+id/bn_cleanallcache"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="@dimen/dimen_layout_margin_mediu"
+                android:textColor="@color/color_text_while" />
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rujian.mobileassistant" >
-
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,11 +18,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AppLockActivity">
+            android:name=".AppLockActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
         <activity
-            android:name=".AppManagerActivity">
+            android:name=".AppManagerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
+        <activity
+            android:name=".CleanCacheActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+        </activity>
+
     </application>
 
 </manifest>

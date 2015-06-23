@@ -6,6 +6,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 
+
 import com.rujian.mobileassistant.bean.AppInfo;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class AppInfoProvider {
      * @param context
      * @return
      */
-    public List<AppInfo> getAppInfos(Context context) {
+    public static List<AppInfo> getAppInfos(Context context) {
         //得到包管理器
         PackageManager pm = context.getPackageManager();
         List<AppInfo> appinfos = new ArrayList<>();
@@ -47,6 +48,7 @@ public class AppInfoProvider {
             AppInfo appInfo = new AppInfo();
             Drawable icon = packinfo.applicationInfo.loadIcon(pm);
             String name = packinfo.applicationInfo.loadLabel(pm).toString() + packinfo.applicationInfo.uid;
+            String versionName = packinfo.versionName;
             //应用程序的特征标志。 可以是任意标志的组合
             int flags = packinfo.applicationInfo.flags;//应用交的答题卡
             if ((flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
@@ -66,6 +68,7 @@ public class AppInfoProvider {
             appInfo.setIcon(icon);
             appInfo.setName(name);
             appInfo.setPackname(packname);
+            appInfo.setVersionName(versionName);
             appinfos.add(appInfo);
         }
         return appinfos;

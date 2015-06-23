@@ -1,12 +1,73 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.rujian.mobileassistant.AppLockActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        >
 
-</RelativeLayout>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textAppearance="?android:attr/textAppearanceMedium"
+           android:text="程序锁开关"
+           android:id="@+id/tv_lock_onoff"
+           android:layout_centerVertical="true"
+           android:layout_alignParentStart="true"
+           android:layout_marginLeft="5dp"
+           android:singleLine="true"
+           android:textSize="16dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OFF"
+            android:id="@+id/off"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="2dp" />
+
+       <Button
+           android:layout_width="50dp"
+           android:layout_height="40dp"
+           android:id="@+id/bt_lock"
+           android:layout_alignParentEnd="true"
+           android:background="@mipmap/phone_public_toggle_off"
+           android:layout_alignParentTop="true"
+           />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ON"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="2dp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_applock"
+        android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="加锁软件"
+            android:id="@+id/tv_lockapp_item"
+            android:background="#ff717177"
+            android:textColor="@color/color_text_while" />
+
+    </FrameLayout>
+</LinearLayout>

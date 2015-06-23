@@ -89,7 +89,7 @@ public class MainActivity extends Activity {
                         System.out.println("点击了手机卫士");
                         break;
                     case 2:
-                        Intent intent3 = new Intent(MainActivity.this,AppManagerActivity.class);
+                        Intent intent3 = new Intent(MainActivity.this,AppLockActivity.class);
                         startActivity(intent3);
                         System.out.println("点击了程序锁");
                         break;

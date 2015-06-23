@@ -18,11 +18,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AppLockActivity"
+            android:name=".AppManagerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
         <activity
-            android:name=".AppManagerActivity"
+            android:name=".AppLockActivity"
             android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
         <activity

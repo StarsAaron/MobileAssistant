@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/rl_applock_item">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/iv_lock_app"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="软件名"
+            android:id="@+id/tv_applock_name"
+            android:layout_alignTop="@+id/iv_lock_app"
+            android:layout_toEndOf="@+id/iv_lock_app"
+            android:textSize="20dp"
+            android:textColor="@color/color_text_black"
+            android:singleLine="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="版本号"
+            android:id="@+id/tv_applock_version"
+            android:layout_below="@+id/tv_applock_name"
+            android:layout_toEndOf="@+id/iv_lock_app"
+            android:textSize="16dp"
+            android:singleLine="true"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/iv_iflock"
+            android:layout_alignTop="@+id/tv_applock_name"
+            android:layout_alignParentEnd="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="加锁"
+            android:id="@+id/tv_orlock"
+            android:textSize="16dp"
+            android:singleLine="true"
+            android:layout_alignBottom="@+id/iv_lock_app"
+            android:layout_alignStart="@+id/iv_iflock" />
+
+    </RelativeLayout>
+</LinearLayout>

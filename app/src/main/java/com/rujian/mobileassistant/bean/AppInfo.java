@@ -13,6 +13,7 @@ public class AppInfo implements Serializable {
     private boolean inRom;
     private boolean userApp;
     private String packname;
+    private String versionName;
 
     public Drawable getIcon() {
         return icon;
@@ -52,6 +53,14 @@ public class AppInfo implements Serializable {
 
     public void setPackname(String packname) {
         this.packname = packname;
+    }
+
+    public String getVersionName() {
+        return versionName;
+    }
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
     }
 
     @Override
